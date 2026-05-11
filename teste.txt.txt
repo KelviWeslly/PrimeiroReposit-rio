@@ -1,3 +1,53 @@
 testando meu git
-testeando a interação do arquivo git + maquina 
-Segundo teste
+package lista6exercicio;
+
+import java.util.Scanner;
+
+public class questão5matrizes {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+//		Questão 5. Leia uma matriz 5 x 5 e escreva a localização (linha e a coluna) do 
+//		maior valor. Considere que a matriz não terá elementos repetido
+		
+
+		Scanner scan = new Scanner(System.in);
+
+        
+        int[][] MatrizM = new int[5][5];
+
+        
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                System.out.print("Digite o valor da posição [" + i + "][" + j + "]: ");
+                MatrizM[i][j] = scan.nextInt();
+            }
+        }
+
+        
+        int maiorValor = MatrizM[0][0];
+        int linhaMaior = 0;
+        int colunaMaior = 0;
+
+        
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                if (MatrizM[i][j] > maiorValor) {
+                    maiorValor = MatrizM[i][j];
+                    linhaMaior = i;
+                    colunaMaior = j;
+                }
+            }
+        }
+
+       
+        System.out.println("\nMaior valor da matriz: " + maiorValor);
+        System.out.println("Localização: linha " + linhaMaior + ", coluna " + colunaMaior);
+
+        scan.close();
+
+	
+	}
+
+}
